@@ -311,3 +311,10 @@ fragment Int
 fragment Digit
  : [0-9]
  ;
+
+// Byte Size and Time Duration unit parsers
+BYTE_SIZE: Digit+ ('.' Digit+)? BYTE_UNIT;
+TIME_DURATION: Digit+ ('.' Digit+)? TIME_UNIT;
+
+fragment BYTE_UNIT: [KkMmGgTt]? [Bb];
+fragment TIME_UNIT: 'ms' | 's' | 'm' | 'h';
